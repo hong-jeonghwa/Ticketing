@@ -3,19 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper">
-    <select id="selectUser" resultType="com.signin.data.UserData">
-        SELECT userId, userPwd
-        FROM userdata
-        WHERE userId = #{userId};
+    <select id="selectTestData" resultType="com.ticket.data.Test">
+        SELECT TESTNUM, TESTCONTENT
+        FROM TEST
+        ORDER BY TESTNUM
     </select>
-    <select id="selectUserData" resultType="com.signin.data.UserData">
-        SELECT userId, userPwd, userName, nickName, userPhone
-        FROM userdata;
-        WHERE userId = #{userId};
-    </select>
-    <insert id="insertUser">
-        INSERT INTO userdata(userId, userPwd)
-        VALUES(#{userId}, #{UserPwd});
+    <insert id="insertTest" parameterType="com.ticket.data.Test">
+        INSERT INTO test
+        VALUES(#{testNum}, #{testContent})
     </insert>
     <insert id="insertUserData">
         INSERT INTO userdata(userId, userName, nickName, userPwd, userPhone)

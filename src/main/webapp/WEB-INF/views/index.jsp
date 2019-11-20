@@ -1,12 +1,26 @@
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html lang="ko">
+<head>
+</head>
 <body>
-<h2>Hello World!</h2>
-
-UserID: <input type="text" id="userId" /><br/>
-UserPassword: <input type="password" id="userPwd"/><br/>
-<input type="button" value="SignIn" id="signInBtn">
-<a href="/signup">SignUp</a>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/resources/js/index.js"></script>
+<div style="width: 50%;">
+    <%--<c:forEach var="item" items="${data}">--%>
+        <%--num: ${item.testNum}<br/>--%>
+        <%--content: ${item.testContent}<br/>--%>
+    <%--</c:forEach>--%>
+<%----%>
+    <jsp:include page="seat.jsp"></jsp:include>
+</div>
+<%--<h1>File Upload</h1>
+<form method="post" action="upload" enctype="multipart/form-data">
+    <label>email:</label>
+    <input type="text" name="email">
+    <br><br>
+    <label>File:</label>
+    <input type="file" name="file1">
+    <br><br>
+    <input type="submit" value="upload">
+</form>--%>
 </body>
 </html>
+
